@@ -1,20 +1,59 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"></script>
+  <style>
+  </style>
+</head>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-8 offset-md-2 left-column mb-1 text-center">
+      <h2>github repository issue tracker</h2>
+    </div>
+  </div>
+  <div class="row mt-5">
+      <div class="offset-md-3 col-md-6 md-form input-group">
+          <input type="search" class="form-control" placeholder="enter github repo url" [(ngModel)]="repoUrl">
+          <span class="input-group-btn">
+              <button class="btn btn-primary btn-sm " type="button" (click)="process()">Go!</button>
+          </span>
+      </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-3 left-column mb-1">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h5 class="">open issues(<24hrs)</h5>
+          <span class="badge primary-color badge-pill">{{openIssueslt24hr}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h5 class="">open issues(>24hrs && <7days)</h5>
+          <span class="badge primary-color badge-pill">{{openIssuesgt24hrlt7day}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h5 class="">open issues(>7days)</h5>
+          <span class="badge primary-color badge-pill">{{openIssuesgt7day}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <h5 class="">total open issues</h5>
+          <span class="badge primary-color badge-pill">{{openIssuesgt24hrlt7day+openIssuesgt7day+openIssueslt24hr}}
+          </span>
+        </li>
+      </ul>
+    </div>
+ </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+</html>
